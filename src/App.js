@@ -17,6 +17,12 @@ export default function App({ $target }) {
     lastId++;
   };
 
+  const onDelete = (id) => {
+    const nextState = todoList.state.filter((todo) => todo.id !== id);
+    todoList.setState(nextState);
+    console.log(nextState);
+  };
+
   new TodoForm({ $target, onSumbit });
-  const todoList = new TodoList({ $target, intialState });
+  const todoList = new TodoList({ $target, intialState, onDelete });
 }

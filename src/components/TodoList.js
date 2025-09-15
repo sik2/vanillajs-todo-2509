@@ -11,7 +11,7 @@ export default function TodoList({ $target, intialState }) {
   this.render = () => {
     $list.innerHTML = `
     <ul>
-        ${this.state.map((row) => `<li>${row}</li>`).join("")}
+        ${this.state.map((row) => `<li>${row.id} / ${row.text}</li>`).join("")}
     </ul>
   `;
   };

@@ -1,11 +1,9 @@
-export default function TodoList({ $target }) {
+export default function TodoList({ $target, intialState }) {
   const $list = document.createElement("div");
 
   $list.innerHTML = `
     <ul>
-        <li>할일 1</li>
-        <li>할일 2</li>
-        <li>할일 3</li>
+        ${intialState.map((row) => `<li>${row}</li>`).join("")}
     </ul>
   `;
 

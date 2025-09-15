@@ -2,7 +2,7 @@ import TodoForm from "./components/TodoForm.js";
 import TodoList from "./components/TodoList.js";
 
 export default function App({ $target }) {
-  const intialState = [
+  const initialState = [
     { id: 1, text: "할일1", checked: true },
     { id: 2, text: "할일2", checked: false },
     { id: 3, text: "할일3", checked: false },
@@ -32,5 +32,5 @@ export default function App({ $target }) {
   };
 
   new TodoForm({ $target, onSumbit });
-  const todoList = new TodoList({ $target, intialState, onDelete, onToggle });
+  const todoList = new TodoList({ $target, initialState, onDelete, onToggle });
 }

@@ -1,10 +1,12 @@
 export default function TodoForm({ $target, onSumbit }) {
   const $form = document.createElement("form");
 
-  $form.innerHTML = `
+  this.render = () => {
+    $form.innerHTML = `
     <input />
     <button type="submit">입력</button>
   `;
+  };
 
   $form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -13,8 +15,13 @@ export default function TodoForm({ $target, onSumbit }) {
 
     const text = $input.value;
 
-    onSumbit(text);
+    if (text.length > 1) {
+      onSumbit(text);
+      $input.value = "";
+    }
   });
 
   $target.appendChild($form);
+
+  this.render();
 }

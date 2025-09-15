@@ -23,6 +23,14 @@ export default function App({ $target }) {
     console.log(nextState);
   };
 
+  const onToggle = (id) => {
+    const nextState = todoList.state.map((todo) =>
+      todo.id === id ? { ...todo, checked: !todo.checked } : todo
+    );
+    todoList.setState(nextState);
+    console.log(nextState);
+  };
+
   new TodoForm({ $target, onSumbit });
-  const todoList = new TodoList({ $target, intialState, onDelete });
+  const todoList = new TodoList({ $target, intialState, onDelete, onToggle });
 }

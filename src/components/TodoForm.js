@@ -3,7 +3,7 @@ export default function TodoForm({ $target, onSumbit }) {
 
   this.render = () => {
     $form.innerHTML = `
-    <input />
+    <input type="text" />
     <button type="submit">입력</button>
   `;
   };
